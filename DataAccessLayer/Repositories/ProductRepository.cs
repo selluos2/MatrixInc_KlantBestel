@@ -39,6 +39,16 @@ namespace DataAccessLayer.Repositories
             return _context.Products.Include(p => p.Parts).FirstOrDefault(p => p.Id == id);
         }
 
+        public IList<Product> GetBestSellingProducts(int Amount)
+        {
+            return _context.OrderProduct
+                .Select(p => p.Product)
+                .Distinct()
+                .OrderByDescending(p => p.OrderProducts.Sum(op => op.Quantity))
+                .Take(Amount)
+                .ToList();
+        }
+
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
