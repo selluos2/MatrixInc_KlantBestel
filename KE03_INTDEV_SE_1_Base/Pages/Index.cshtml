@@ -10,6 +10,7 @@
         @foreach(var p in Model.BestSellingProducts)
         {
             <div class="productContainer">
+                <a asp-page="/Product" asp-route-id="@p.Id" class="productLink"></a>
                 <div><img src="@p.ImageUrl" class="productImg"/></div>
                 <div class="productAnouncement">
                     <p class="productTitle">@Html.DisplayName(p.Name)</p>

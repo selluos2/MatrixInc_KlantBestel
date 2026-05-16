@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KE03_INTDEV_SE_1_Base.Pages
 {
-    public class ProductModel : PageModel
+    public class ProductsModel : PageModel
     {
         private readonly IProductRepository _productRepository;
         public IEnumerable<Product> Products { get; set; }
         public string? SearchQuery { get; set; }
-        public ProductModel(IProductRepository productRepository)
+        public ProductsModel(IProductRepository productRepository)
         {
             _productRepository = productRepository;
         }

@@ -1,5 +1,5 @@
 ﻿@page
-@model KE03_INTDEV_SE_1_Base.Pages.ProductModel
+@model KE03_INTDEV_SE_1_Base.Pages.ProductsModel
 @{
 	ViewData["Title"] = "Producten";
 }
@@ -15,17 +15,18 @@
     }
     @foreach (var product in Model.Products)
     {
+
         <div class="productContainer">
-            <div><img class="productImg" src="@product.ImageUrl" /></div>
+            <a asp-page="/Product" asp-route-id="@product.Id" class="productLink"></a>
+            <div>
+                <img class="productImg" src="@product.ImageUrl" />
+            </div>
             <div class="productAnouncement">
                 <div class="productTxt">
-                    <div class="productTitle">
-                        @product.Name
-                    </div>
-                    <div class="productDescr">
-                        @product.Description
-                    </div>
+                    <div class="productTitle">@product.Name</div>
+                    <div class="productDescr">@product.Description</div>
                 </div>
+
                 <div class="productOrder">
                     <div class="productPrice">
                         <p>€@product.Price.ToString()</p>
