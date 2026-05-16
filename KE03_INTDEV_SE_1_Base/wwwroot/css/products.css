@@ -9,6 +9,8 @@
     flex-direction: row;
     border-radius: 8px;
     background-color: white;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
     height: 20%;
     width: 70%;

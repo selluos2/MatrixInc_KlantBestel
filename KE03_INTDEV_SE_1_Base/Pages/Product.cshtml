@@ -3,5 +3,23 @@
 @{
 	ViewData["Title"] = "ProductDetails";
 }
+<link rel='stylesheet' type='text/css' media='screen' href='~/css/product.css'>
 
-<h1>@Model.product.Name</h1>
+<div class="container2">
+	<div class="imgContainer">
+		<img src="@Model.product.ImageUrl" />
+	</div>
+	<div class="productContainer">
+		<div class="infoContainer">
+			<h1>@Model.product.Name</h1>
+			<p>@Model.product.Description</p>
+		</div>
+		<div class="acties">
+			<input type="number" placeholder="123..." name="Aantal" class="Input2" min="1" max="50"/>
+			<div class="orderContainer">
+				<button class="addToCart2">Voeg toe aan winkelwagen <img class="cartIcon" src="~/img/Icons/CartIcon.png" /></button>
+			</div>
+			<p class="price">€@Model.product.Price per stuk</p>
+		</div>
+	</div>
+</div>
