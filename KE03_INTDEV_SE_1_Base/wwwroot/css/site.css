@@ -19,6 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #E1E7EF;
 }
 
 .NavImg {
@@ -30,3 +31,17 @@ body {
     width: 30px;
     height: auto;
 }
+
+.navbar {
+    background-color: #0F1729 !important;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .nav-link {
+    color: #FFFFFF !important;
+}
+
+    .navbar-light .nav-link:hover,
+    .navbar-light .nav-link:focus {
+        color: #E1E7EF !important;
+    }
