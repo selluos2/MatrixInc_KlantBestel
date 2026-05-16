@@ -11,6 +11,8 @@ namespace DataAccessLayer.Interfaces
     {
         public IEnumerable<Product> GetAllProducts();
 
+        public IList<Product> GetProductsFromSearch(string search);
+
         public Product? GetProductById(int id);
 
         public void AddProduct(Product product);

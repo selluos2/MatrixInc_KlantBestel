@@ -13,38 +13,9 @@
                 <div><img src="@p.ImageUrl" class="productImg"/></div>
                 <div class="productAnouncement">
                     <p class="productTitle">@Html.DisplayName(p.Name)</p>
-                    <p class="productPrice">@Html.DisplayName("€" + p.Price.ToString())</p>
+                    <p class="productPrice">€@p.Price.ToString()</p>
                 </div>
             </div>
         }
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Descriptie</th>
-            <th>Prijs</th>
-        </tr>
-    </thead>
-    @foreach (var p in Model.BestSellingProducts)
-    {
-        <tr>
-            <td><img src="@p.ImageUrl" alt="@p.Name" class="img-thumbnail" /></td>
-            <td>@Html.DisplayName(p.Name)</td>
-            <td>@Html.DisplayName(p.Description)</td>
-            <td>@Html.DisplayName("$" + p.Price.ToString())</td>
-        </tr>
-    }
-</table> *@

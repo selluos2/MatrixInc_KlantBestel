@@ -49,6 +49,15 @@ namespace DataAccessLayer.Repositories
                 .ToList();
         }
 
+        public IList<Product> GetProductsFromSearch(string search)
+        {
+            search = search.ToLower();
+
+            return _context.Products
+                .Where(p => p.Name.ToLower().Contains(search) || p.Description.ToLower().Contains(search))
+                .ToList();
+        }
+
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);

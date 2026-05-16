@@ -41,5 +41,6 @@
 }
 
 .productPrice{
-
+    color: red;
+    font-weight: bold;
 }
