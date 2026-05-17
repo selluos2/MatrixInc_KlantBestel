@@ -51,6 +51,7 @@ img{
     flex-direction: column;
     height: 15vh;
     width: 30vh;
+    margin: 0;
 }
 
 .Input2{
@@ -90,4 +91,11 @@ img{
     margin-left: 1vh;
     margin-top: 5.5vh;
     cursor: default;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    width: 34vh;
+    background-color: white;
 }

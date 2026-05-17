@@ -25,6 +25,10 @@ namespace KE03_INTDEV_SE_1_Base
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            // Add session to the app
+            builder.Services.AddSession();
+            builder.Services.AddHttpContextAccessor();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -52,6 +56,8 @@ namespace KE03_INTDEV_SE_1_Base
             app.UseAuthorization();
 
             app.MapRazorPages();
+
+            app.UseSession();
 
             app.Run();
         }

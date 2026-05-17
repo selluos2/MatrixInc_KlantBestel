@@ -3,3 +3,11 @@
 @{
 	ViewData["Title"] = "Winkelwagen";
 }
+@if(Model.Items != null)
+{
+	@foreach (var c in Model.Items)
+	{
+		<h1>@c.product.Name</h1>
+		<h1>@c.quantity</h1>
+	}
+}

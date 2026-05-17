@@ -30,7 +30,10 @@
                     <div class="productPrice">
                         <p>€@product.Price.ToString()</p>
                     </div>
-                    <button class="addToCart">+ <img src="~/img/Icons/CartIcon.png" /></button>
+                    <form method="post" asp-page-handler="AddToCart">
+                        <input type="hidden" name="id" value="@product.Id" />
+                        <button class="addToCart">+ <img src="~/img/Icons/CartIcon.png" /></button>
+                    </form>
                 </div>
             </div>
         </div>

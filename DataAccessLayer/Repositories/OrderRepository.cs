@@ -24,6 +24,29 @@ namespace DataAccessLayer.Repositories
             _context.SaveChanges();
         }
 
+        public List<FullOrder> GetFullOrdersByCustomer(int customerId)
+        {
+            List<FullOrder> result = new List<FullOrder>();
+            var order = _context.Orders
+                .Where(o => o.CustomerId == customerId)
+                .Include(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+                .ToList();
+
+            foreach (var product in order)
+            {
+                FullOrder fill = new FullOrder();
+                fill.Order = product; 
+                foreach (var item in product.OrderProducts)
+                {
+                    CartDisplay p = new CartDisplay(item.Product, item.Quantity);
+                    fill.Producten.Add(p);
+                }
+                result.Add(fill);
+            }
+            return result;
+        }
+
         public void DeleteOrder(Order order)
         {
             _context.Orders.Remove(order);

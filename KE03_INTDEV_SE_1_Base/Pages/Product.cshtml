@@ -3,7 +3,7 @@
 @{
 	ViewData["Title"] = "ProductDetails";
 }
-<link rel='stylesheet' type='text/css' media='screen' href='~/css/product.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='~/css/product.css' asp-append-version="true">
 
 <div class="container2">
 	<div class="imgContainer">
@@ -15,10 +15,13 @@
 			<p>@Model.product.Description</p>
 		</div>
 		<div class="acties">
-			<input type="number" placeholder="123..." name="Aantal" class="Input2" min="1" max="50"/>
-			<div class="orderContainer">
-				<button class="addToCart2">Voeg toe aan winkelwagen <img class="cartIcon" src="~/img/Icons/CartIcon.png" /></button>
-			</div>
+			<form method ="post" asp-page-handler="AddToCart">
+				<input type="hidden" name="id" value="@Model.product.Id" />
+				<input type="number" placeholder="1" name="quantity" class="Input2" min="1" max="50"/>
+				<div class="orderContainer">
+					<button class="addToCart2">Voeg toe aan winkelwagen <img class="cartIcon" src="~/img/Icons/CartIcon.png" /></button>
+				</div>
+			</form>
 			<p class="price">€@Model.product.Price per stuk</p>
 		</div>
 	</div>
