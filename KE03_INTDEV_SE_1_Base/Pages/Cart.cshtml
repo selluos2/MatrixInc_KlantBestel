@@ -37,6 +37,12 @@
 				<td>@item.product.Name</td>
 				<td>@item.quantity</td>
 				<td>€@item.product.Price</td>
+				<td>
+					<form method="post" asp-page-handler="DeleteCartItem">
+						<input type="hidden" name="id" value="@item.product.Id"/>
+						<button class="deleteBtn" type="submit">X</button>
+					</form>
+				</td>
 			</tr>
 		}
 		</table>

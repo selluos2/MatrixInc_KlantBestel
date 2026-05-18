@@ -75,5 +75,17 @@ namespace KE03_INTDEV_SE_1_Base.Pages
             HttpContext.Session.SetObject("Cart", new Cart());
             return RedirectToPage("/cart");
         }
+
+        public IActionResult OnPostDeleteCartItem(int id)
+        {
+            Cart = HttpContext.Session.GetObject<Cart>("Cart");
+
+            CartItem item = Cart.Items.Where(c => c.ProductId == id).First();
+            Cart.Items.Remove(item);
+
+            HttpContext.Session.SetObject("Cart", Cart);
+
+            return RedirectToPage("/cart");
+        }
     }
 }

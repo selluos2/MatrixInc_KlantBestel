@@ -1,7 +1,8 @@
 ﻿.cartContainer {
     display: flex;
     flex-direction: column;
-    width: 55vh;
+/*    width: 60vh;*/
+    width: fit-content;
     height: auto;
     border-radius: 8px;
     background-color: white;
@@ -15,6 +16,10 @@
 
 .mainCart{
 
+}
+
+.tableStructure{
+    margin-left: 0.35vh;
 }
 
 .orderCart {
@@ -32,6 +37,12 @@
     background-color: black;
     border-radius: 8px;
     margin-right: 2vh;
+}
+
+.orderBtn:hover{
+    cursor: pointer;
+    border: 2px solid white;
+    transition-duration: 0.5s;
 }
 
 .notLoggedIn {
@@ -100,6 +111,8 @@
     font-weight: bold;
     height: 3vh;
     margin: auto;
+    margin-left: 2vh;
+    margin-right: 2vh;
 }
 
 .cartTitle{
@@ -134,3 +147,16 @@ td{
     font-weight: bold;
 }
 
+.deleteBtn {
+    color: red;
+    font-weight: bold;
+    background: black;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.8);
+}
+
+.deleteBtn:hover {
+    cursor: pointer;
+    border: 2px solid red;
+    transition-duration: 0.5s;
+}
