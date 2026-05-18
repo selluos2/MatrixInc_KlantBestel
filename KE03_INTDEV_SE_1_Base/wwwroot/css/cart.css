@@ -51,6 +51,8 @@
     height: 3vh;
     margin: auto;
     cursor: pointer;
+    margin-left: 2vh;
+    margin-right: 2vh;
 }
 
 .cartLogIn{
