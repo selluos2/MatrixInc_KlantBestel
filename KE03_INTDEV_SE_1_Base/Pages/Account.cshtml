@@ -3,7 +3,7 @@
 @{
 	ViewData["Title"] = "Account details";
 }
-<link rel='stylesheet' type='text/css' media='screen' href='~/css/Account.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='~/css/Account.css' asp-append-version="true">
 <div class="pageContainer">
 	<div class="accountContainer">
 		@foreach (var c in Model.Customers)
@@ -23,37 +23,6 @@
 					<p class="LoggedIn">Ingelogd</p>
 				}
 			</div>	
-		}
-	</div>
-	<div class="orderHistoryContainer">
-		<h1 class="historyTitle">Bestelling Geschiedenis</h1>
-		@if(Model.CurrentCustomer != null)
-		{
-			foreach (var order in Model.Orders)
-			{
-				<div class="orderContainer">
-					<p class="tableDate">@order.Order.OrderDate</p>
-					<table class="tableStructure">
-						<tr>
-							<th class="tableTitle">Naam</th>
-							<th class="tableTitle">Aantal</th>
-							<th class="tableTitle">Prijs Per Stuk</th>
-						</tr>
-						@foreach (var product in order.Producten)
-						{
-							<tr>
-								<td class="tableContent">@product.product.Name</td>
-								<td class="tableContent">@product.quantity</td>
-								<td class="tableContent">€@product.product.Price</td>
-							</tr>
-						}
-					</table>
-				</div>
-			}
-		}
-		else
-		{
-			<p class="wrong">Log in om uw bestelling geschiedenis te zien!</p>
 		}
 	</div>
 </div>

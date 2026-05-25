@@ -30,7 +30,15 @@
                         </form>
                     </div>
                     <a class="navbar-brand" asp-area="" asp-page="/Cart"><img class="NavImg2" src="~/img/Icons/CartIcon.png" /></a>
-                    <a class="navbar-brand" asp-area="" asp-page="/Account"><img class="NavImg2" src="~/img/Icons/AccountIcon.png" /></a>
+                    <div class="dropdown">
+                        <a class="navbar-brand" asp-area="" asp-page="/Account" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="NavImg2" src="~/img/Icons/AccountIcon.png" />
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/Account">Accounts</a></li>
+                            <li><a class="dropdown-item" href="/Orderhistory">Bestelgeschiedenis</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
